@@ -1,5 +1,6 @@
 package tom.tournement.game.Entity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,12 @@ import java.util.UUID;
 @Entity
 @Table(name = "game")
 public class Game {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Id//Annotate this to be the primary key in db
+    @GeneratedValue(generator = "uuid") //Defines what type the primary key is going to be
+    @GenericGenerator(name = "uuid", strategy = "uuid2")// Enginge how to generate the primary key
+    @ApiModelProperty(required = false, hidden = true)
     private UUID uuid = UUID.randomUUID();
 
-    @Column(name = "name")
+    @Column(name = "name") //Annotate the column name in db
     private String name;
 }
