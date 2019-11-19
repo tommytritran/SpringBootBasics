@@ -20,6 +20,7 @@ public class Game {
     @Id//Annotate this to be the primary key in db
     @GeneratedValue(generator = "uuid") //Defines what type the primary key is going to be
     @GenericGenerator(name = "uuid", strategy = "uuid2")// Enginge how to generate the primary key
+    @Column(length = 16) //Required to query this param, hibernate translates uuid to BINARY(255) while a uuid is BINARY(16)
     @ApiModelProperty(required = false, hidden = true)
     private UUID uuid = UUID.randomUUID();
 
