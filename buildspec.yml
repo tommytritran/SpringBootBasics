@@ -1,0 +1,13 @@
+version: 0.1
+
+  phases:
+    install:
+      commands:
+        - echo TBA
+    build:
+      commands:
+        - echo Build starting..
+        - gradle build
+  artifacts:
+    files:
+      - 'build/libs/*.jar'
