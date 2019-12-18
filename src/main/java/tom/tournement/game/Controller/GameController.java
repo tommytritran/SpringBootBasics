@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import tom.tournement.game.Entity.Game;
 import tom.tournement.game.Repository.GameRepository;
 
@@ -32,4 +33,10 @@ public class GameController {
     @PostMapping("/game")
     @ApiOperation(value = "Add a game object to DB")
     public Game addGame(Game game){ return gameRepo.save(game);}
+
+    @PostMapping("/game/uploadPicture")
+    @ApiOperation(value = "upload game profile picture")
+    public String uploadPicture(MultipartFile imageFile) throws Exception {
+        return "";
+    }
 }

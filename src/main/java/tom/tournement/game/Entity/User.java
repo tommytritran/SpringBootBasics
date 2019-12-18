@@ -16,8 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "game")
-public class Game {
+@Table(name = "user")
+public class User {
     @Id//Annotate this to be the primary key in db
     @GeneratedValue(generator = "uuid") //Defines what type the primary key is going to be
     @GenericGenerator(name = "uuid", strategy = "uuid2")// Enginge how to generate the primary key
@@ -27,5 +27,6 @@ public class Game {
 
     @Column(name = "name") //Annotate the column name in db
     private String name;
+
 
 }
